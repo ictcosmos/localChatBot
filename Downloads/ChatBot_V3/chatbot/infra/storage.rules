@@ -1,0 +1,15 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Firebase Storage rules ensuring strict multi-tenancy.
+    // Enforces maximum file size limit of 20MB (20 * 1024 * 1024 = 20971520 bytes).
+    
+    match /users/{uid}/documents/{documentId}/{fileName} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if request.auth != null 
+                    && request.auth.uid == uid 
+                    && request.resource.size < 20 * 1024 * 1024;
+    }
+  }
+}

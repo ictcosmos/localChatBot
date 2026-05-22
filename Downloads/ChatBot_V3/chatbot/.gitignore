@@ -1,0 +1,21 @@
+# Next.js dependencies and builds
+web/node_modules/
+web/.next/
+web/out/
+web/.env*.local
+
+# Python dependencies and environments
+api/venv/
+api/.venv/
+api/__pycache__/
+api/**/*.pyc
+api/.env
+
+# Local database and keys
+api/chroma_data/
+api/service-account.json
+
+# IDEs and OS files
+.DS_Store
+.vscode/
+.idea/
