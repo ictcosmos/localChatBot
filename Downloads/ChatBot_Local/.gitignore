@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment
+.env
+.env.*
+api/.env
+web/.env.local
+
+# Firebase private keys
+api/service-account.json
+infra/service-account.json
+*firebase-adminsdk*.json
+
+# Local storage
+api/uploads/
+api/chroma_data/
+uploads/
+chroma_data/
+
+# Node / Next
+node_modules/
+.next/
+dist/
+build/
+
+# OS
+.DS_Store
